@@ -728,12 +728,28 @@ textarea {
 }
 
 @media (max-width: 900px) {
+    .header-content {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .logo-group {
+        flex: 1;
+        min-width: 0;
+    }
+
     .menu-toggle {
         display: inline-flex;
+        order: -1;
+        margin-right: auto;
+        margin-left: 0;
+        padding: 0.4rem 0.7rem;
     }
 
     nav {
         width: 100%;
+        margin-left: 0;
     }
 
     .menu {
