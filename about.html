@@ -3,408 +3,200 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PNGC Institute of Higher Education</title>
-
-    <!-- Font Awesome -->
+    <title>About PNGC Institute of Higher Education</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
-
-    <style>
-        :root {
-            --primary: #b30000;
-            --secondary: #f2a900;
-            --light: #ffffff;
-            --dark: #333333;
-            --grey: #f1f1f1;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background: var(--grey);
-            color: var(--dark);
-        }
-
-        /* HEADER */
-        .site-header {
-            background: var(--primary);
-            color: var(--light);
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .header-content {
-            max-width: 1300px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo-left, .logo-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-left img, .logo-right img {
-              height: 70px;
-            border-radius: 50%;
-        }
-        .site-title {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-        .site-title strong {
-            font-size: 18px;
-        }
-        .site-title span {
-            font-size: 13px;
-        }
-
-        /* NAVIGATION */
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 12px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            background: var(--secondary);
-            color: black;
-            border-radius: 5px;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        nav li {
-            position: relative;
-        }
-        .submenu {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 180px;
-            border-radius: 5px;
-            top: 100%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        nav li:hover .submenu {
-            display: block;
-        }
-        .submenu a {
-            color: black;
-            display: block;
-            padding: 10px;
-        }
-        .submenu a:hover {
-            background: var(--grey);
-        }
-
-        /* SLIDER */
-        .slider {
-            position: relative;
-            height: 420px;
-            overflow: hidden;
-        }
-        .slides img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            display: none;
-        }
-        .slides img.active {
-            display: block;
-        }
-        .slide-overlay {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 40px;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            color: white;
-            text-align: center;
-        }
-        .slide-overlay h1 {
-            font-size: 32px;
-        }
-
-        /* HERO */
-        .hero {
-            padding: 40px 20px;
-            background: white;
-            text-align: center;
-        }
-        .hero h2 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        .hero p {
-            max-width: 750px;
-            margin: auto;
-            font-size: 18px;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            background: var(--primary);
-            color: var(--light);
-            padding: 40px 20px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 20px;
-            max-width: 1300px;
-            margin: auto;
-        }
-        .footer-section h3 {
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-        .footer-section a {
-            color: var(--light);
-            text-decoration: none;
-        }
-        .footer-bottom {
-            margin-top: 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.3);
-            padding-top: 10px;
-        }
-
-        /* MOBILE */
-        @media(max-width: 768px) {
-            .header-content {
-                flex-wrap: wrap;
-            }
-            nav {
-                width: 100%;
-                order: 3;
-            }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background: var(--primary);
-                padding: 10px;
-            }
-            nav ul.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .logo-right {
-                display: none;
-            }
-            .submenu {
-                position: static;
-                box-shadow: none;
-                margin-left: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/site.css" />
 </head>
-
 <body>
-<header class="site-header">
-    <div class="header-content">
-        <div class="logo-left">
-            <img src="images/logo.png" alt="Logo" />
-            <div class="site-title">
-                <strong>Papua New Guinea</strong>
-                <span>Christian Institute of Higher Education</span>
+    <header class="site-header">
+        <div class="header-content">
+            <a class="logo-group" href="index.html">
+                <img src="images/logo.png" alt="PNGC IHE crest" />
+                <div>
+                    <p class="logo-title">PNGC Institute of Higher Education</p>
+                    <p class="logo-subtitle">Faith • Excellence • Service</p>
+                </div>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav aria-label="Main navigation">
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li class="has-submenu">
+                        <a href="director.html">Leadership</a>
+                        <ul class="submenu">
+                            <li><a href="director.html">Director</a></li>
+                            <li><a href="team.html">Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="programs.html">Academics</a>
+                        <ul class="submenu">
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="mission.html">Mission & Values</a></li>
+                            <li><a href="vision.html">Vision 2030</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="facilities.html">Campus Life</a>
+                        <ul class="submenu">
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="parents.html">Parents</a></li>
+                            <li><a href="news-events.html">News & Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="btn-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <p class="badge">Who we are</p>
+            <h1>About PNGC Institute of Higher Education</h1>
+            <p>PNGC IHE exists to develop Catholic leaders who respond courageously to the social, economic and spiritual needs of Papua New Guinea. Our integrated curriculum balances academic rigor, pastoral care and Melanesian cultural intelligence.</p>
+            <a href="mission.html" class="btn"><i class="fas fa-heart"></i> Explore our mission</a>
+        </div>
+        <img src="images/carexpo3.jpg" alt="Students presenting a project" />
+    </section>
+
+    <main>
+        <section class="content-section">
+            <h2 class="section-title">Institutional identity</h2>
+            <p class="section-lead">We are chartered by the Catholic Diocese of Wabag and aligned with DHERST, TVET and partner universities across the Pacific. Our culture is rooted in stewardship, hospitality and excellence.</p>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Holistic formation</h3>
+                    <p>We nurture intellectual curiosity, spiritual growth and professional competence through pastoral accompaniment and peer mentoring groups.</p>
+                    <ul class="resource-list">
+                        <li>Weekly house meetings and chaplaincy support</li>
+                        <li>Ignatian-style reflection and journaling</li>
+                        <li>Community-based research in Enga parishes</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Industry partnerships</h3>
+                    <p>Our memoranda of understanding with Catholic Health Services, Enga Provincial Government and private sector enterprises ensure authentic work-integrated learning.</p>
+                    <ul class="resource-list">
+                        <li>Clinical placements in rural aid posts</li>
+                        <li>Entrepreneurship boot camps with SMEs</li>
+                        <li>Joint teacher training with Wabag Catholic College</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Quality assurance</h3>
+                    <p>We benchmark against regional universities, complete annual program reviews and publish transparent data on graduate destinations.</p>
+                    <ul class="resource-list">
+                        <li>Annual external moderation</li>
+                        <li>Digital learning analytics</li>
+                        <li>Alumni tracer studies</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>1981 – Founding</h3>
+                    <p>PNGC IHE opened as a teacher training centre beside the Our Lady of Fatima parish to meet Enga’s urgent need for qualified educators.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1998 – University affiliation</h3>
+                    <p>Signed partnership with the University of Notre Dame Australia to align curriculum, supervision and credit transfer pathways.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2015 – Campus expansion</h3>
+                    <p>Construction of the Learning Commons, digital studio and women’s residence enabled a 35% increase in enrolment.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023 – Innovation hub</h3>
+                    <p>Launched the Enga Innovation Hub, connecting alumni entrepreneurs, microfinance groups and student researchers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Values in action</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Faith & Integrity</h3>
+                    <p>Daily prayer, Eucharist and counselling ensure students discern their vocation and lead with honesty.</p>
+                </article>
+                <article class="card">
+                    <h3>Excellence & Innovation</h3>
+                    <p>Project-based learning, innovation sprints and peer observation drive continuous improvement.</p>
+                </article>
+                <article class="card">
+                    <h3>Community & Care</h3>
+                    <p>We prioritise trauma-informed support, community development projects and family-inclusive education plans.</p>
+                </article>
+                <article class="card">
+                    <h3>Stewardship</h3>
+                    <p>Solar-powered dorms, water harvesting and sustainable agriculture plots teach environmental responsibility.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="media-grid">
+                <div>
+                    <h2 class="section-title">Meet our community</h2>
+                    <p>Students represent 17 provinces, bringing languages, customs and talents that enrich our learning community. Tutors and chaplains accompany students individually through growth plans.</p>
+                    <a href="team.html" class="btn secondary"><i class="fas fa-users"></i> Meet our staff</a>
+                </div>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Community spotlight" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h3>PNGC Institute of Higher Education</h3>
+                <p>Faith-filled tertiary education for the Highlands region since 1981.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/PNGCIHE" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Visit us</h3>
+                <ul class="footer-links">
+                    <li>PNGC IHE Campus, Wabag Town</li>
+                    <li>Enga Province, Papua New Guinea</li>
+                    <li>Phone: +675 547 1234</li>
+                    <li>Email: info@pngcihe.ac.pg</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Quick links</h3>
+                <ul class="footer-links">
+                    <li><a href="programs.html">Academic programs</a></li>
+                    <li><a href="facilities.html">Campus facilities</a></li>
+                    <li><a href="news-events.html">News & Events</a></li>
+                    <li><a href="contact.html">Contact & Directions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Stay updated</h3>
+                <form class="newsletter-form">
+                    <label for="newsletter-email-about">Email</label>
+                    <input type="email" id="newsletter-email-about" placeholder="name@example.com" required />
+                    <button type="submit">Join mailing list</button>
+                </form>
             </div>
         </div>
-
-        <button class="menu-toggle"><i class="fa fa-bars"></i></button>
-
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a>
-                    <div class="submenu">
-                        <a href="history.html">History</a>
-                        <a href="director.html">Director's Message</a>
-                        <a href="team.html">Our Team</a>
-                        <a href="mission.html">Our Mission</a>
-                        <a href="vision.html">Our Vision</a>
-                    </div>
-                </li>
-
-                <li><a href="programs.html">Programs</a>
-                    <div class="submenu">
-                        <a href="early.html">Childhood Education Programs</a>
-                        <a href="bachelor.html">Bachelor's Degree Program</a>
-                        <a href="master.html">Master's Program</a>
-                    </div>
-                </li>
-
-                <li><a href="admissions.html">Admissions</a>
-                    <div class="submenu">
-                        <a href="online.html">E‑Learning</a>
-                        <a href="post.html">Postgraduate Admission</a>
-                        <a href="under.html">Undergraduate Admission</a>
-                    </div>
-                </li>
-
-                <li><a href="facilities.html">Facilities</a>
-                    <div class="submenu">
-                        <a href="library.html">Library</a>
-                        <a href="itlab.html">ICT Lab</a>
-                        <a href="cafeteria.html">Cafeteria</a>
-                        <a href="dormitory.html">Dormitory</a>
-                    </div>
-                </li>
-
-                <li><a href="news-events.html">News & Updates</a>
-                    <div class="submenu">
-                        <a href="news.html">News</a>
-                        <a href="events.html">Events</a>
-                        <a href="announcements.html">Announcements</a>
-                    </div>
-                </li>
-
-                <li><a href="parents.html">Parents</a>
-                    <div class="submenu">
-                        <a href="fees.html">School Fees</a>
-                        <a href="handbook.html">Parent Handbook</a>
-                        <a href="support.html">Support Services</a>
-                    </div>
-                </li>
-
-                <li><a href="contact.html">Contact</a>
-                    <div class="submenu">
-                        <a href="enquiry.html">General Enquiry</a>
-                        <a href="supportdesk.html">Support Desk</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="logo-right">
-            <img src="images/logo1.png" alt="Partner Logo" />
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PNGC Institute of Higher Education. All rights reserved.</p>
         </div>
-    </div>
-</header>
-
-<!-- SLIDER -->
-<section class="slider">
-    <div class="slides">
-        <img src="images/p1.jpg" class="active" />
-        <img src="images/p2.jpg" />
-        <img src="images/p3.jpg" />
-        <div class="slide-overlay">
-            <h1>Welcome to PNGCIHE</h1>
-            <p>Empowering students through Christian Higher Education</p>
-        </div>
-    </div>
-</section>
-
-<!-- HERO SECTION -->
-<section class="hero">
-    <h2>Learn. Grow. Serve.</h2>
-    <p>We prepare students in Papua New Guinea for academic excellence, moral discipline, and service to their communities through Christian values.</p>
-</section>
-
-
-
-
-<footer class="site-footer">
-    <div class="footer-grid">
-
-        <!-- CONTACT -->
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p><strong>Waigani Christian College</strong></p>
-            <p>Waigani Drive, NCD, Port Moresby, Papua New Guinea</p>
-            <p>Phone: +675 7217 9181 / +675 8967 5040</p>
-            <p>Email: <a href="mailto:admission@pngcu.ac.pg">admission@pngcu.ac.pg</a></p>
-        </div>
-
-        <!-- MAP -->
-        <div class="footer-section">
-            <h3>Find Us</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.9574512382046!2d147.1736830738835!3d-9.42513389065288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x690230bb3eef64ad%3A0xd6e103934061181a!2sWaigani%20Christian%20School!5e0!3m2!1sen!2spg!4v1763118073078!5m2!1sen!2spg" width="100%" height="160" style="border:0; border-radius:5px;" allowfullscreen loading="lazy"></iframe>
-        </div>
-
-        <!-- USEFUL LINKS -->
-        <div class="footer-section">
-            <h3>Useful Links</h3>
-            <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="admissions.html">Admissions</a></li>
-                <li><a href="facilities.html">Facilities</a></li>
-                <li><a href="news-events.html">News & Events</a></li>
-                <li><a href="parents.html">Parents' Corner</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- SOCIAL MEDIA -->
-        <div class="footer-section">
-            <h3>Connect With Us</h3>
-            <div style="display:flex; gap:12px; font-size:20px;">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        &copy; <span id="year"></span> Waigani Christian College. All rights reserved.
-    </div>
-</footer>
-
-<script>
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-    });
-
-    // Slider functionality
-    const slides = document.querySelectorAll('.slides img');
-    let currentSlide = 0;
-
-    function showSlide(n) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    // Auto-advance slides every 5 seconds
-    setInterval(nextSlide, 5000);
-
-    // Year in footer
-    document.getElementById("year").innerText = new Date().getFullYear();
-</script>
-
+    </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
