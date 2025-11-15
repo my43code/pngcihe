@@ -1,76 +1,73 @@
+(function(){
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('main-menu');
+    if(menuToggle && menu){
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('show');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
 
+    document.querySelectorAll('.has-submenu > a').forEach(link => {
+        link.addEventListener('click', e => {
+            if(window.innerWidth <= 900){
+                e.preventDefault();
+                link.parentElement.classList.toggle('open');
+            }
+        });
+    });
 
-        /* menu toggle (mobile)
-        (function(){
-            const toggle = document.querySelector('.menu-toggle');
-            const menu = document.getElementById('main-nav');
-            toggle.addEventListener('click', () => {
-                const open = menu.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', String(open));
-            });
-        })();
+    const yearEl = document.getElementById('year');
+    if(yearEl){
+        yearEl.textContent = new Date().getFullYear();
+    }
 
-        // simple slider with overlay text (welcome message remains on slides)
-        (function(){
-            const slides = Array.from(document.querySelectorAll('#slides img'));
+    const slider = document.querySelector('.slider');
+    if(slider){
+        const images = Array.from(slider.querySelectorAll('#slides img'));
+        if(images.length > 0){
             let idx = 0;
-            const slideCount = slides.length;
             const overlayTitle = document.getElementById('slideTitle');
             const overlayText = document.getElementById('slideText');
-
-            // Optional: different messages for slides (modify as needed)
             const captions = [
                 {
-                    title: "Welcome to Our School Partnership",
-                    text: '"But seek first the kingdom of God and his righteousness; and all these things shall be added unto you." – Matthew 6:33'
+                    title: 'Where Faith Meets Academic Excellence',
+                    text: 'PNGC IHE prepares servant leaders for Enga Province and Papua New Guinea.'
                 },
                 {
-                    title: "Academic Excellence & Faith",
-                    text: "Preparing students for service, leadership and lifelong learning."
+                    title: 'Hands-on Learning & Community Impact',
+                    text: 'Students contribute to rural schools, health posts and community outreach.'
                 },
                 {
-                    title: "Community & Facilities",
-                    text: "Modern facilities and a supportive Christian community."
+                    title: 'Modern Facilities in the Highlands',
+                    text: 'Digital labs, smart classrooms and residential care ensure holistic formation.'
                 }
             ];
 
-            function showSlide(i){
-                slides.forEach((s, n) => s.classList.toggle('active', n === i));
-                const cap = captions[i] || captions[0];
-                overlayTitle.textContent = cap.title;
-                overlayText.textContent = cap.text;
-            }
+            const showSlide = (pos) => {
+                images.forEach((img, i) => img.classList.toggle('active', i === pos));
+                const caption = captions[pos] || captions[0];
+                if(overlayTitle){
+                    overlayTitle.textContent = caption.title;
+                }
+                if(overlayText){
+                    overlayText.textContent = caption.text;
+                }
+            };
 
-            // auto-advance
-            let interval = setInterval(() => {
-                idx = (idx + 1) % slideCount;
+            showSlide(idx);
+            let timer = setInterval(() => {
+                idx = (idx + 1) % images.length;
                 showSlide(idx);
-            }, 2000);
+            }, 4500);
 
-            // pause on hover
-            const slider = document.querySelector('.slider');
-            slider.addEventListener('mouseenter', ()=> clearInterval(interval));
-            slider.addEventListener('mouseleave', ()=> interval = setInterval(()=>{ idx = (idx + 1) % slideCount; showSlide(idx); }, 2000));
-        })();
-
-        // set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // submenu toggle
-        
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
-
-  document.querySelectorAll('.menu > li').forEach(item => {
-    item.addEventListener('click', e => {
-      if (window.innerWidth <= 768 && item.querySelector('.submenu')) {
-        e.preventDefault();
-        item.classList.toggle('open');
-      }
-    });
-  });
-*/
+            slider.addEventListener('mouseenter', () => clearInterval(timer));
+            slider.addEventListener('mouseleave', () => {
+                timer = setInterval(() => {
+                    idx = (idx + 1) % images.length;
+                    showSlide(idx);
+                }, 4500);
+            });
+        }
+    }
+})();

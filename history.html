@@ -1,158 +1,202 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>History - PNGC Institute of Higher Education</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/history.css" />
+    <title>History of PNGC Institute of Higher Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
- 
- <!-- PAGE TITLE -->
-    <section class="page-title">
-        <h1>History of the School</h1>
-        <p>
-            Learn how our school began, how it has grown, and how God has led us through
-            each chapter of our journey.
-        </p>
-    </section>
-
-    <!-- INTRODUCTION / OVERVIEW -->
-    <section class="intro-card">
-        <h2>From Humble Beginnings to a Growing Campus</h2>
-        <p>
-            PNGC Institute of Higher Education started as a small training centre with a
-            simple vision: to provide quality Christian education to the young people of
-            Papua New Guinea. In its early days, the school operated with a few classrooms,
-            limited resources, and a handful of dedicated staff who were committed to
-            serving students both academically and spiritually.
-        </p>
-        <p>
-            Over the years, the school has expanded to offer more programs, improved
-            facilities, and modern learning resources. Despite the changes, one thing has
-            remained the same: our commitment to nurturing students who are not only
-            knowledgeable, but also disciplined, respectful, and God-fearing.
-        </p>
-    </section>
-
-    <!-- TIMELINE SECTION -->
-    <section class="timeline">
-        <h2>Key Milestones</h2>
-
-        <div class="timeline-item">
-            <div class="timeline-year">2005 – Foundation</div>
-            <p>
-                The school was established with a small pioneer group of students and
-                teachers. Classes were held in temporary buildings and makeshift classrooms.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-year">2010 – First Major Expansion</div>
-            <p>
-                New permanent classrooms, a small computer lab, and a library were built,
-                allowing the school to increase its enrolment and improve learning outcomes.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-year">2015 – ICT & Science Development</div>
-            <p>
-                ICT and science programs were strengthened with additional computers,
-                laboratory equipment, and updated curriculum to meet modern education standards.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-year">2020 – Digital Learning Shift</div>
-            <p>
-                During the COVID-19 period, the school introduced blended learning methods,
-                combining classroom teaching with online support and digital resources.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-year">2024 and Beyond</div>
-            <p>
-                Today the school continues to grow, embracing technology, upgrading facilities,
-                and strengthening its mission to prepare students for higher education,
-                employment, and service to their communities.
-            </p>
-        </div>
-    </section>
-
-    <!-- IMAGE GALLERY -->
-    <section class="gallery">
-        <div class="gallery-header">
-            <h2>Our Journey in Pictures</h2>
-            <span>(Replace these placeholders with actual photos of your school)</span>
-        </div>
-
-        <div class="gallery-grid">
-            <!-- Replace src values with your own image files -->
-            <img src="images/facility1.jpg" alt="Old school campus" />
-            <img src="images/conferenceroom.jpg" alt="New classroom building" />
-            <img src="images/p1.jpg" alt="Computer lab" />
-            <img src="images/12stdsassembly.jpg" alt="Students at assembly" />
-            <img src="images/earlychildhood.jpg" alt="Graduation ceremony" />
-            <img src="images/stdcon2.jpg" alt="School sports day" />
-        </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="video-section">
-        <h2>Campus History Videos</h2>
-        <p>
-            Watch short presentations that highlight how our school has grown over the years.
-        </p>
-
-        <div class="video-grid">
-            <article class="video-box">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/tkLw_nw0PwM"
-                        title="Waigani Christian School Expands" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <header class="site-header">
+        <div class="header-content">
+            <a class="logo-group" href="index.html">
+                <img src="images/logo.png" alt="PNGC IHE crest" />
+                <div>
+                    <p class="logo-title">PNGC Institute of Higher Education</p>
+                    <p class="logo-subtitle">Learning rooted in Enga Province</p>
                 </div>
-                <p class="video-desc">
-                    <strong>Waigani Christian School Expansion</strong><br />
-                    A look at the first major expansion that allowed us to add new
-                    classrooms, a library, and modern learning spaces.
-                </p>
-            </article>
-
-            <article class="video-box">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/USNlBxNrUSc"
-                        title="Waigani Christian Academy Expands to PNG Christian University" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p class="video-desc">
-                    <strong>Journey to PNG Christian University</strong><br />
-                    Discover how Waigani Christian Academy partnered with PNG Christian
-                    University to offer higher education pathways for our students.
-                </p>
-            </article>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav aria-label="Main navigation">
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="history.html" class="active">History</a></li>
+                    <li class="has-submenu">
+                        <a href="director.html">Leadership</a>
+                        <ul class="submenu">
+                            <li><a href="director.html">Director</a></li>
+                            <li><a href="team.html">Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="programs.html">Academics</a>
+                        <ul class="submenu">
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="mission.html">Mission & Values</a></li>
+                            <li><a href="vision.html">Vision 2030</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="facilities.html">Campus Life</a>
+                        <ul class="submenu">
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="parents.html">Parents</a></li>
+                            <li><a href="news-events.html">News & Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="btn-link">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- QUICK FACTS -->
-        <div class="facts">
-            <div class="fact-card">
-                <strong>Student Growth</strong>
-                Started with fewer than 50 students, now serving hundreds from different
-                provinces and backgrounds.
-            </div>
-            <div class="fact-card">
-                <strong>Academic Focus</strong>
-                Strong emphasis on ICT, science, business, and values-based education that
-                prepares students for real-world challenges.
-            </div>
-            <div class="fact-card">
-                <strong>Spiritual Foundation</strong>
-                Regular chapels, worship programs, and spiritual support help shape the
-                character and faith of each student.
-            </div>
+    <section class="hero">
+        <div>
+            <p class="badge">Our story</p>
+            <h1>From humble beginnings to a regional centre of excellence</h1>
+            <p>PNGC IHE’s legacy is tied to Catholic missionaries, Enga community leaders and pioneering lecturers who believed every village deserves highly trained teachers, health workers and administrators.</p>
+            <a href="news-events.html" class="btn"><i class="fas fa-book-open"></i> Read our chronicle</a>
         </div>
+        <img src="images/exprirates.jpg" alt="Historic images of PNGC" />
     </section>
+
+    <main>
+        <section class="content-section">
+            <h2 class="section-title">Historical timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>1978 – Consultation phase</h3>
+                    <p>Diocese of Wabag, Enga Provincial Government and Caritas Australia conducted feasibility studies to establish a Catholic tertiary college.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1981 – Opening cohort</h3>
+                    <p>First 32 students enrolled in certificate programs for teaching and parish administration under the leadership of Sr. Benigna Maria.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1990s – Regional reach</h3>
+                    <p>Mobile training teams brought short courses to remote districts including Kompiam, Kandep and Lagaip.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2008 – Accreditation milestone</h3>
+                    <p>DHERST granted full registration, allowing PNGC IHE to award diplomas recognised across PNG and the Pacific.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2020 – Digital pivot</h3>
+                    <p>When the pandemic disrupted travel, faculty launched Moodle classrooms, radio lessons and WhatsApp tutoring to keep students learning.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Documentary: Bej history</h2>
+            <div class="media-grid">
+                <video controls poster="images/carexpo.jpg">
+                    <source src="videos/bejhistory.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div>
+                    <p class="section-lead">Hear from alumni, bishops and staff about the sacrifices that built PNGC IHE and why our graduates continue to serve remote communities.</p>
+                    <ul class="resource-list">
+                        <li>Archival footage from diocesan celebrations</li>
+                        <li>Stories of early benefactors and Engan mothers who fundraised for dormitories</li>
+                        <li>Highlights of our transformation into a multi-program institute</li>
+                    </ul>
+                    <a href="https://www.engaprovince.gov.pg/" target="_blank" rel="noopener" class="btn secondary"><i class="fas fa-landmark"></i> Provincial insights</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Legacy projects</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Library of voices</h3>
+                    <p>Digitising oral histories from elders and clergy to preserve Enga’s knowledge systems for future learners.</p>
+                </article>
+                <article class="card">
+                    <h3>Women of courage</h3>
+                    <p>Scholarships honouring the first female graduates who now lead diocesan education offices and NGOs.</p>
+                </article>
+                <article class="card">
+                    <h3>Community schools renewal</h3>
+                    <p>Alumni partner with parish committees to renovate and reopen rural schools closed during tribal conflicts.</p>
+                </article>
+                <article class="card">
+                    <h3>Highlands research archives</h3>
+                    <p>Collection of theses, maps and ecological studies accessible to local government planners.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Facts & figures</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <strong>43</strong>
+                    <span>years of service</span>
+                </div>
+                <div class="stat">
+                    <strong>17</strong>
+                    <span>religious congregations involved</span>
+                </div>
+                <div class="stat">
+                    <strong>3</strong>
+                    <span>campuses and outreach centres</span>
+                </div>
+                <div class="stat">
+                    <strong>9</strong>
+                    <span>major capital projects delivered since 2000</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h3>PNGC Institute of Higher Education</h3>
+                <p>Faith-filled tertiary education for the Highlands region since 1981.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/PNGCIHE" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Visit us</h3>
+                <ul class="footer-links">
+                    <li>PNGC IHE Campus, Wabag Town</li>
+                    <li>Enga Province, Papua New Guinea</li>
+                    <li>Phone: +675 547 1234</li>
+                    <li>Email: info@pngcihe.ac.pg</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Quick links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About PNGC IHE</a></li>
+                    <li><a href="mission.html">Mission & Values</a></li>
+                    <li><a href="news-events.html">News & Events</a></li>
+                    <li><a href="contact.html">Contact & Directions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Stay updated</h3>
+                <form class="newsletter-form">
+                    <label for="newsletter-email-history">Email</label>
+                    <input type="email" id="newsletter-email-history" placeholder="name@example.com" required />
+                    <button type="submit">Join mailing list</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> PNGC Institute of Higher Education. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
