@@ -3,105 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Director's Message</title>
+    <title>Director's Message | PNGC Institute of Higher Education</title>
     <style>
+        :root {
+            --primary: #b30000;
+            --secondary: #f2a900;
+            --light: #ffffff;
+            --dark: #1e1e1e;
+            --muted: #f7f7f7;
+        }
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: "Georgia", "Times New Roman", serif;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
         body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at top, #f5f5f5, #dedede);
-            padding: 2rem 1rem;
-        }
-        .message-panel {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-            max-width: 960px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: minmax(260px, 320px) 1fr;
-            overflow: hidden;
-        }
-        figure {
-            margin: 0;
-            background: #101820;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 2rem 1.5rem;
-            color: #f0f0f0;
-            text-align: center;
-        }
-        figure img {
-            width: 100%;
-            max-width: 260px;
-            border-radius: 12px;
-            border: 6px solid rgba(255,255,255,0.5);
-            object-fit: cover;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.45);
-        }
-        figure figcaption {
-            font-size: 1.15rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        figure span {
-            font-size: 0.95rem;
-            display: block;
-            margin-top: 0.25rem;
-            letter-spacing: 0.5px;
-        }
-        .message {
-            padding: 2.5rem;
-            color: #2b2b2b;
+            background: var(--muted);
+            color: var(--dark);
             line-height: 1.7;
         }
-        .message h1 {
-            font-size: 2.3rem;
-            color: #900;
-            margin-bottom: 1rem;
+        header {
+            background: linear-gradient(135deg, var(--primary), #6b0000);
+            color: var(--light);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
         }
-        .message p {
-            margin-bottom: 1rem;
+        .nav-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .branding {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .branding img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+        .branding div {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.95rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        nav a:hover::after,
+        nav a:focus-visible::after {
+            transform: scaleX(1);
+        }
+        main {
+            max-width: 1100px;
+            margin: 2rem auto 3rem;
+            padding: 0 1rem;
+        }
+        .hero {
+            background: var(--light);
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 25px 65px rgba(0,0,0,0.12);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(242,169,0,0.25), transparent 45%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            max-width: 780px;
+            margin: 0 auto;
+            color: #555;
             font-size: 1.05rem;
         }
-        .signature {
-            margin-top: 2rem;
-            font-weight: bold;
-            color: #900;
+        .message-card {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 2rem;
+            background: var(--light);
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+            padding: 2rem;
+            align-items: center;
         }
-        @media (max-width: 800px) {
-            .message-panel {
+        .portrait {
+            text-align: center;
+        }
+        .portrait img {
+            width: 320px;
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+            border: 6px solid var(--light);
+            object-fit: cover;
+        }
+        .portrait h3 {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        .portrait p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .message-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .message-content p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        blockquote {
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #444;
+            background: #fff8e1;
+            border-radius: 6px;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .value-card {
+            background: var(--light);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+        .value-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: #111;
+            color: #bbb;
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+        @media (max-width: 900px) {
+            .message-card {
                 grid-template-columns: 1fr;
             }
-            figure {
-                padding-bottom: 0;
+        }
+        @media (max-width: 600px) {
+            .hero {
+                padding: 1.75rem;
+            }
+            .message-card {
+                padding: 1.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
-    <section class="message-panel">
-        <figure>
-            <img src="images/p2.jpg" alt="Photo of Min Benjman Mul">
-            <figcaption>Min Benjman Mul<span>Member of North Wagi</span></figcaption>
-        </figure>
-        <article class="message">
+    <header>
+        <div class="nav-wrapper">
+            <div class="branding">
+                <img src="images/logo.png" alt="PNGC Institute Logo">
+                <div>
+                    <strong>PNGC Institute of Higher Education</strong>
+                    <span>Transforming potential into purpose</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
             <h1>Director's Message</h1>
-            <p>Our institute is built on a simple conviction: every student from every community in Papua New Guinea deserves access to courageous learning. Each day I see our classrooms filled with curiosity, and I am reminded that education is the most powerful bridge we can build for North Wagi and beyond.</p>
-            <p>We focus on practical skills, grounded ethics, and the cultural values that have sustained our people for generations. When our graduates return to their villages and towns, they carry tools to solve problems, lift families, and lead with humility. This is the standard I expect of our staff, our partners, and myself.</p>
-            <p>Thank you for trusting us with your aspirations. Together we will continue to open doors, champion innovation, and prove that excellence flourishes when we stand united.</p>
-            <p class="signature">Min Benjman Mul<br>Director &mdash; Member of North Wagi</p>
-        </article>
-    </section>
+            <p>It is my privilege to welcome you to PNGC Institute of Higher Education, where we champion inclusive and industry-ready learning. I invite you to read the message below, which reflects our shared commitment to excellence, innovation, and community impact.</p>
+        </section>
+
+        <section class="message-card">
+            <div class="portrait">
+                <img src="images/p1.jpg" alt="Portrait of the Director of PNGC Institute">
+                <h3>Dr. Naida Waine</h3>
+                <p>Director, PNGC Institute of Higher Education</p>
+            </div>
+            <div class="message-content">
+                <h2>A Vision Rooted in Service</h2>
+                <p>Every learner who walks through our doors carries a story, a dream, and a profound responsibility to serve their communities. At PNGC Institute of Higher Education, we nurture those stories by combining academic rigor with practical exposure so graduates remain grounded, confident, and ready for the future.</p>
+                <p>As Director, I am inspired daily by the resilience of our students and staff. Together, we are building a campus culture that celebrates curiosity, champions collaboration, and aligns learning with national development priorities. Our laboratories, studios, and learning hubs are designed as places where bold ideas can be tested and refined.</p>
+                <blockquote>
+                    “We strive to graduate professionals who not only master their disciplines but also possess the empathy and leadership to transform the communities they serve.”
+                </blockquote>
+                <p>I extend my gratitude to parents, industry partners, and alumni who continue to place their trust in us. Your encouragement enables us to expand pathways into health, education, technology, and business sectors across Papua New Guinea. Let us continue to stand together, share knowledge generously, and create opportunities for the next generation.</p>
+                <p>Thank you for being part of the PNGC Institute family.</p>
+                <p><strong>With respect and determination,</strong><br>Dr. Naida Waine</p>
+            </div>
+        </section>
+
+        <section class="values-grid">
+            <article class="value-card">
+                <h4>Student-Centered</h4>
+                <p>We design learning pathways that meet students where they are and propel them toward meaningful careers.</p>
+            </article>
+            <article class="value-card">
+                <h4>Community Impact</h4>
+                <p>Our outreach programs address real needs in rural and urban areas, ensuring education translates into service.</p>
+            </article>
+            <article class="value-card">
+                <h4>Innovation &amp; Integrity</h4>
+                <p>Ethical leadership and creative thinking guide every decision we make as an institution.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> PNGC Institute of Higher Education. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
