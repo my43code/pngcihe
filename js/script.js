@@ -32,7 +32,7 @@
             const captions = [
                 {
                     title: 'Where Faith Meets Academic Excellence',
-                    text: 'PNGC IHE prepares servant leaders for National Capital District and Papua New Guinea.'
+                    text: 'Papua New Guinea Christian Institute of Higher Education prepares servant leaders for National Capital District and Papua New Guinea.'
                 },
                 {
                     title: 'Hands-on Learning & Community Impact',
@@ -103,7 +103,7 @@
                 src: 'https://www.youtube.com/embed/ysz5S6PUM-U',
                 embed: true,
                 title: 'Campus walk-through',
-                description: 'Take a quick tour of PNGC IHE facilities, chaplaincy hub and academic wings.'
+                description: 'Take a quick tour of Papua New Guinea Christian Institute of Higher Education facilities, chaplaincy hub and academic wings.'
             },
             {
                 type: 'video',
